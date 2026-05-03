@@ -118,3 +118,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header::before');
+});
+
+document.getElementById('homeBtn').addEventListener('click', function() {
+  if (window.scrollY === 0) {
+    location.reload();
+  }
+});
+
