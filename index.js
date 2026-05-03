@@ -1,6 +1,11 @@
-/* -----------------------------------------
-  Have focus outline only for keyboard users 
- ---------------------------------------- */
+ 
+ if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener("load", function () {
+  window.scrollTo(0, 0);
+});
 
 const handleFirstTab = (e) => {
   if(e.key === 'Tab') {
@@ -42,15 +47,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-
-
-
-
-
-
-
-// ===== SHRINK NAVBAR ON SCROLL =====
+ 
 const nav = document.querySelector(".nav");
 
 window.addEventListener("scroll", () => {
@@ -60,8 +57,7 @@ window.addEventListener("scroll", () => {
     nav.classList.remove("shrink");
   }
 });
-
-// ===== ACTIVE SECTION HIGHLIGHT =====
+ 
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav__link");
 const mobileLinks = document.querySelectorAll(".mobile-nav a");
@@ -90,13 +86,35 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
-// ===== SMOOTH SCROLL =====
+ 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
+
+    const targetId = this.getAttribute("href");
+
+    // ignore just "#" links
+    if (targetId === "#") return;
+
+    const target = document.querySelector(targetId);
+
+    // if target doesn't exist, don't break JS
+    if (!target) return;
+
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+    // adjust offset if you have fixed header
+    const offset = 80; // tweak if needed
+
+    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+    window.scrollTo({
+      top: elementPosition - offset,
       behavior: "smooth"
     });
+
+    // keep URL clean (no #contact)
+    history.pushState("", document.title, window.location.pathname);
   });
 });
+
+
