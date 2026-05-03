@@ -178,65 +178,80 @@
 
 <section class="contact" id="contact">
   <div class="row">
-
     <h2>Get In Touch</h2>
 
     <div class="contact__info">
-
       <p>
-        Have a project idea, need a website, or just want to connect? I’m always open to discussing new opportunities and ideas.  
-        Drop me a message—I usually respond within 24 hours.
+        Have a project idea, need a website, or want to collaborate?
+        Feel free to send me a message. I usually reply within 24 hours.
       </p>
 
-      <a href="mailto:giash678@gmail.com" class="btn">giash678@gmail.com</a>
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact__form">
+        <div class="form__group">
+          <input type="text" name="user_name" placeholder="Your Name" required>
+        </div>
+<input type="hidden" name="time" value="">
+        <div class="form__group">
+          <input type="email" name="user_email" placeholder="Your Email" required>
+        </div>
 
-      <div id="work-with-me" style="margin-top:25px; font-family: Arial, sans-serif;">
+        <div class="form__group">
+          <input type="text" name="subject" placeholder="Subject" required>
+        </div>
 
+        <div class="form__group">
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--pink">Send Message</button>
+        <p id="form-status"></p>
+      </form>
+
+      <div class="direct-email">
+        <p>Or email me directly:</p>
+        <a href="mailto:giash678@gmail.com" class="btn">giash678@gmail.com</a>
+      </div>
+
+      <!-- Work With Me -->
+      <div id="work-with-me">
         <p>
-          Interested in working together? You can hire me through freelance platforms or contact me directly for faster communication.
+          Interested in working together? Hire me through freelance platforms
+          or contact me directly.
         </p>
 
-        <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:15px;">
+        <div class="platform__cards">
 
-          <!-- Fiverr Card -->
-          <div style="border:1px solid #ddd; padding:15px; border-radius:10px; width:250px; display:flex; flex-direction:column;">
-
+          <!-- Fiverr -->
+          <div class="platform__card">
             <h3>Fiverr</h3>
-
-            <p style="flex:1;">
-              Hire me for WordPress development, custom themes, and email signature design.
+            <p>
+              Hire me for WordPress development, HTML email signatures,
+              and responsive website solutions.
             </p>
-
-            <a href="https://www.fiverr.com/webdevgiash/" target="_blank"
-               style="display:inline-block; margin-top:10px; padding:10px 15px; background:#1dbf73; color:#fff; text-decoration:none; border-radius:6px; text-align:center;">
+            <a href="https://www.fiverr.com/webdevgiash/" target="_blank" class="platform-btn fiverr-btn">
               View Profile
             </a>
-
           </div>
 
-          <!-- Upwork Card -->
-          <div style="border:1px solid #ddd; padding:15px; border-radius:10px; width:250px; display:flex; flex-direction:column;">
-
+          <!-- Upwork -->
+          <div class="platform__card">
             <h3>Upwork</h3>
-
-            <p style="flex:1;">
-              Available for long-term and short-term WordPress & web development projects.
+            <p>
+              Available for long-term and short-term WordPress and web
+              development projects.
             </p>
-
-            <a href="https://www.upwork.com/freelancers/~01b29d4e7a3d7b5e48" target="_blank"
-               style="display:inline-block; margin-top:10px; padding:10px 15px; background:#14a800; color:#fff; text-decoration:none; border-radius:6px; text-align:center;">
+            <a href="https://www.upwork.com/freelancers/~01b29d4e7a3d7b5e48" target="_blank" class="platform-btn upwork-btn">
               Hire Me
             </a>
-
           </div>
 
         </div>
-
       </div>
-
     </div>
   </div>
 </section>
+
 
   <footer role="contentinfo" class="footer">
     <div class="row">
@@ -287,6 +302,41 @@
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
 </nav>
+  
+  
+  
+ <!--  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script> -->
+
+<script src="./email.min.js"></script>
+<script>
+(function () {
+  emailjs.init("SQ-4Y9JHWx3w9AyNN");
+})();
+document.querySelector('[name="time"]').value = `${String(new Date().getDate()).padStart(2,'0')}-${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][new Date().getMonth()]}-${new Date().getFullYear()} ${new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:true})}`;
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const status = document.getElementById("form-status");
+    status.innerHTML = "Sending...";
+
+    emailjs.sendForm(
+      "service_ygiad56",
+      "template_qlgzh1t",
+      this
+    ).then(
+      function () {
+        status.innerHTML = "✅ Message sent successfully!";
+        document.getElementById("contact-form").reset();
+      },
+      function () {
+        status.innerHTML = "❌ Failed to send. Please try again.";
+      }
+    );
+  });
+</script>
+  
   
 </body>
 
