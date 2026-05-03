@@ -1,6 +1,3 @@
-/* --------------------------------------- */
-/* ----- Basic Setup ----- */
-/* --------------------------------------- */
 
 @font-face {
     font-family: 'Hk Grotesk';
@@ -115,10 +112,7 @@ img {
     object-fit: contain;
     max-width: 100%;
 }
-
-/* --------------------------------------- */
-/* ----- Headlines and Paragraphs ----- */
-/* --------------------------------------- */
+ 
 
 h1,
 h2,
@@ -183,10 +177,7 @@ p {
         max-width: var(--container-small-width);
     }
 }
-
-/* --------------------------------------- */
-/* ----- Buttons and Links ----- */
-/* --------------------------------------- */
+ 
 
 a {
     color: var(--white);
@@ -297,8 +288,7 @@ body:not(.user-is-tabbing) a:focus {
     padding-left: 1rem;
     font-family: sans-serif;
 }
-
-/* ----- Back to Top ----- */
+ 
 
 .back-to-top {
     position: fixed;
@@ -331,10 +321,7 @@ body:not(.user-is-tabbing) a:focus {
         right: 1rem;
     }
 }
-
-/* --------------------------------------- */
-/* ----- Navigation ----- */
-/* --------------------------------------- */
+ 
 
 .nav {
     display: flex;
@@ -399,10 +386,7 @@ body:not(.user-is-tabbing) a:focus {
     height: 2px;
     background: var(--pink);
 }
-
-/* --------------------------------------- */
-/* ----- Header ----- */
-/* --------------------------------------- */
+ 
 
 .header {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
@@ -436,10 +420,7 @@ body:not(.user-is-tabbing) a:focus {
         transform: scale(.8);
     }
 }
-
-/* --------------------------------------- */
-/* ----- Work ----- */
-/* --------------------------------------- */
+ 
 
 .work__box {
     display: flex;
@@ -505,10 +486,7 @@ body:not(.user-is-tabbing) a:focus {
         height: 4rem;
     }
 }
-
-/* --------------------------------------- */
-/* ----- Clients ----- */
-/* --------------------------------------- */
+ 
 
 .client__logos {
     display: flex;
@@ -531,10 +509,7 @@ body:not(.user-is-tabbing) a:focus {
         margin-right: var(--gutter-medium);
     }
 }
-
-/* --------------------------------------- */
-/* ----- About ----- */
-/* --------------------------------------- */
+ 
 
 .about__content {
     display: flex;
@@ -563,18 +538,12 @@ body:not(.user-is-tabbing) a:focus {
         margin: 0 var(--gutter-huge) 0 0;
     }
 }
-
-/* --------------------------------------- */
-/* ----- Contact ----- */
-/* --------------------------------------- */
+ 
 
 .contact__info {
     max-width: var(--container-medium-width);
 }
-
-/* --------------------------------------- */
-/* ----- Footer ----- */
-/* --------------------------------------- */
+ 
 
 .footer {
     text-align: center;
@@ -614,15 +583,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 
-
-
-
-
-
-
-
-/* ===== FLOATING NAVBAR ===== */
-/* ===== PREMIUM BLACK GRADIENT NAVBAR ===== */
+ 
 .nav {
   position: fixed;
   top: 15px;
@@ -631,8 +592,7 @@ body:not(.user-is-tabbing) a:focus {
   padding: 14px 28px;
   border-radius: 50px;
   z-index: 9999;
-
-  /* gradient background */
+ 
   background: linear-gradient(
     135deg,
     rgba(20, 20, 20, 0.85),
@@ -647,14 +607,12 @@ body:not(.user-is-tabbing) a:focus {
 
   transition: all 0.3s ease;
 }
-
-/* Shrink effect */
+ 
 .nav.shrink {
   padding: 8px 18px;
   transform: translateX(-50%) scale(0.92);
 }
-
-/* menu */
+ 
 .nav__items {
   display: flex;
   gap: 22px;
@@ -674,13 +632,11 @@ body:not(.user-is-tabbing) a:focus {
 .nav__link.active {
   color: #1dbf73;
 }
-
-/* prevent overlap */
+ 
 .header {
   padding-top: 100px;
 }
-
-/* ===== MOBILE BOTTOM NAV ===== */
+ 
 .mobile-nav {
   display: none;
 }
@@ -713,8 +669,7 @@ body:not(.user-is-tabbing) a:focus {
     color: #1dbf73;
   }
 }
-
-/* subtle glow */
+ 
 .nav::before {
   content: "";
   position: absolute;
@@ -730,5 +685,87 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 
+
+.contact__form {
+  max-width: 600px;
+  margin-top: 30px;
+}
+
+.form__group {
+  margin-bottom: 15px;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  border-color: #ff3258;
+  box-shadow: 0 0 0 3px rgba(255, 50, 88, 0.1);
+}
+
+.contact__form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+#form-status {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.direct-email {
+  margin-top: 25px;
+}
+
+#work-with-me {
+  margin-top: 40px;
+}
+
+.platform__cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.platform__card {
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  border-radius: 12px;
+  width: 260px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.platform__card h3 {
+  margin-bottom: 10px;
+}
+
+.platform-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 18px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.fiverr-btn {
+  background: #1dbf73;
+}
+
+.upwork-btn {
+  background: #14a800;
+}
 
 
