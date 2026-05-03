@@ -1,3 +1,6 @@
+/* --------------------------------------- */
+/* ----- Basic Setup ----- */
+/* --------------------------------------- */
 
 @font-face {
     font-family: 'Hk Grotesk';
@@ -112,7 +115,10 @@ img {
     object-fit: contain;
     max-width: 100%;
 }
- 
+
+/* --------------------------------------- */
+/* ----- Headlines and Paragraphs ----- */
+/* --------------------------------------- */
 
 h1,
 h2,
@@ -177,7 +183,10 @@ p {
         max-width: var(--container-small-width);
     }
 }
- 
+
+/* --------------------------------------- */
+/* ----- Buttons and Links ----- */
+/* --------------------------------------- */
 
 a {
     color: var(--white);
@@ -288,7 +297,8 @@ body:not(.user-is-tabbing) a:focus {
     padding-left: 1rem;
     font-family: sans-serif;
 }
- 
+
+/* ----- Back to Top ----- */
 
 .back-to-top {
     position: fixed;
@@ -321,7 +331,10 @@ body:not(.user-is-tabbing) a:focus {
         right: 1rem;
     }
 }
- 
+
+/* --------------------------------------- */
+/* ----- Navigation ----- */
+/* --------------------------------------- */
 
 .nav {
     display: flex;
@@ -386,16 +399,16 @@ body:not(.user-is-tabbing) a:focus {
     height: 2px;
     background: var(--pink);
 }
- 
+
+/* --------------------------------------- */
+/* ----- Header ----- */
+/* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    font-size: var(--font-size-normal);
+  position: relative;
+  min-height: 100dvh;
+  /* keep only gradient */
+/* background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.4)); */
 }
 
 .header__text {
@@ -420,7 +433,33 @@ body:not(.user-is-tabbing) a:focus {
         transform: scale(.8);
     }
 }
- 
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('./images/header.jpg') center/cover no-repeat;
+  z-index: -1;
+  transform: scale(1.1);
+  will-change: transform;
+}
+.header {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-bg {
+  position: absolute;
+  inset: 0;
+  background: url('./images/header.jpg') center/cover no-repeat;
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+
+/* --------------------------------------- */
+/* ----- Work ----- */
+/* --------------------------------------- */
 
 .work__box {
     display: flex;
@@ -486,7 +525,10 @@ body:not(.user-is-tabbing) a:focus {
         height: 4rem;
     }
 }
- 
+
+/* --------------------------------------- */
+/* ----- Clients ----- */
+/* --------------------------------------- */
 
 .client__logos {
     display: flex;
@@ -509,7 +551,10 @@ body:not(.user-is-tabbing) a:focus {
         margin-right: var(--gutter-medium);
     }
 }
- 
+
+/* --------------------------------------- */
+/* ----- About ----- */
+/* --------------------------------------- */
 
 .about__content {
     display: flex;
@@ -538,12 +583,18 @@ body:not(.user-is-tabbing) a:focus {
         margin: 0 var(--gutter-huge) 0 0;
     }
 }
- 
+
+/* --------------------------------------- */
+/* ----- Contact ----- */
+/* --------------------------------------- */
 
 .contact__info {
     max-width: var(--container-medium-width);
 }
- 
+
+/* --------------------------------------- */
+/* ----- Footer ----- */
+/* --------------------------------------- */
 
 .footer {
     text-align: center;
@@ -583,7 +634,15 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 
- 
+
+
+
+
+
+
+
+/* ===== FLOATING NAVBAR ===== */
+/* ===== PREMIUM BLACK GRADIENT NAVBAR ===== */
 .nav {
   position: fixed;
   top: 15px;
@@ -592,7 +651,8 @@ body:not(.user-is-tabbing) a:focus {
   padding: 14px 28px;
   border-radius: 50px;
   z-index: 9999;
- 
+
+  /* gradient background */
   background: linear-gradient(
     135deg,
     rgba(20, 20, 20, 0.85),
@@ -607,12 +667,14 @@ body:not(.user-is-tabbing) a:focus {
 
   transition: all 0.3s ease;
 }
- 
+
+/* Shrink effect */
 .nav.shrink {
   padding: 8px 18px;
   transform: translateX(-50%) scale(0.92);
 }
- 
+
+/* menu */
 .nav__items {
   display: flex;
   gap: 22px;
@@ -632,11 +694,13 @@ body:not(.user-is-tabbing) a:focus {
 .nav__link.active {
   color: #1dbf73;
 }
- 
+
+/* prevent overlap */
 .header {
   padding-top: 100px;
 }
- 
+
+/* ===== MOBILE BOTTOM NAV ===== */
 .mobile-nav {
   display: none;
 }
@@ -669,7 +733,8 @@ body:not(.user-is-tabbing) a:focus {
     color: #1dbf73;
   }
 }
- 
+
+/* subtle glow */
 .nav::before {
   content: "";
   position: absolute;
