@@ -404,6 +404,7 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Header ----- */
 /* --------------------------------------- */
 
+
 .header__text {
     position: absolute;
     top: 50%;
@@ -427,15 +428,7 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('./images/header.jpg') center/cover no-repeat;
-  z-index: -1;
-  transform: scale(1.1);
-  will-change: transform;
-}
+
 .header {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
         url('./images/header.jpg');
@@ -444,14 +437,6 @@ body:not(.user-is-tabbing) a:focus {
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
-}
-
-.header-bg {
-  position: absolute;
-  inset: 0;
-  background: url('./images/header.jpg') center/cover no-repeat;
-  transform: scale(1.1);
-  z-index: -1;
 }
 
 
@@ -732,6 +717,8 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
+
+
 /* subtle glow */
 .nav::before {
   content: "";
@@ -832,3 +819,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 
+
+					   
+			   
+ 
