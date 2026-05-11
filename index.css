@@ -404,13 +404,6 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Header ----- */
 /* --------------------------------------- */
 
-.header {
-  position: relative;
-  min-height: 100dvh;
-  /* keep only gradient */
-/* background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.4)); */
-}
-
 .header__text {
     position: absolute;
     top: 50%;
@@ -444,8 +437,13 @@ body:not(.user-is-tabbing) a:focus {
   will-change: transform;
 }
 .header {
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+        url('./images/header.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: var(--font-size-normal);
 }
 
 .header-bg {
