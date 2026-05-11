@@ -708,7 +708,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: 10px 15px;
     border-radius: 50px;
     z-index: 9999;
-    gap: 20px;
+    gap: 15px;
   }
 
   .mobile-nav a {
